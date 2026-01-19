@@ -27,6 +27,10 @@ class FrankaCubeLiftEnvCfg(LiftEnvCfg):
         # post init of parent
         super().__post_init__()
 
+        # Set camera view closer to the robot
+        self.viewer.eye = (1.5, 1.5, 1.2)
+        self.viewer.lookat = (0.5, 0.0, 0.4)
+
         # Set Franka as robot
         self.scene.robot = FRANKA_PANDA_CFG.replace(prim_path="{ENV_REGEX_NS}/Robot")
 
